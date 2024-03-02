@@ -18,7 +18,7 @@ func (baker2 *readFromJSON) Read() RecipeBook {
 		fmt.Println(err)
 		os.Exit(0)
 	}
-	fmt.Println(stolen)
+	// fmt.Println(stolen)
 	return stolen
 }
 

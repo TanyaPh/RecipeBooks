@@ -10,7 +10,7 @@ type DBReader interface {
 	Read() RecipeBook
 }
 
-func New(filePath string) *DBReader {
+func New(filePath string) DBReader {
 	fileExtension := filepath.Ext(filePath)
 	switch fileExtension {
 	case ".xml":

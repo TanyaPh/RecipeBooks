@@ -18,7 +18,7 @@ func (baker1 *readFromXML) Read() RecipeBook {
         fmt.Println(err)
         os.Exit(0)
     }
-    fmt.Println(origin)
+    // fmt.Println(origin)
     return origin
 }
 

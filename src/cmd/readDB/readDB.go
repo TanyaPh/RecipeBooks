@@ -2,8 +2,8 @@ package main
 
 import (
     "fmt"
-	"os"
-	"DBReader"
+	"flag"
+	"day01/internal/DBReader"
 )
 
 func main() {
