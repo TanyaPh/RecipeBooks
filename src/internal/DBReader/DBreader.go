@@ -1,7 +1,7 @@
 package DBReader
 
 import (
-    "fmt"
+	"fmt"
 	"os"
 	"path/filepath"
 )
@@ -14,9 +14,9 @@ func New(filePath string) DBReader {
 	fileExtension := filepath.Ext(filePath)
 	switch fileExtension {
 	case ".xml":
-		return &readFromXML {BookName: filePath}
+		return &readFromXML{BookName: filePath}
 	case ".json":
-		return &readFromJSON {BookName: filePath}
+		return &readFromJSON{BookName: filePath}
 	default:
 		fmt.Println("Check file Extension")
 		os.Exit(0)

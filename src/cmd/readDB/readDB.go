@@ -1,20 +1,20 @@
 package main
 
 import (
-    "fmt"
-	"flag"
 	"day01/internal/DBReader"
+	"flag"
+	"fmt"
 )
 
 func main() {
 	// if len(os.Args) < 3 {
-    //     fmt.Println("no file specified")
+	//     fmt.Println("no file specified")
 	// 	os.Exit(0)
-    // }
+	// }
 	// filePath := os.Args[2]
 
 	var file string
-    flag.StringVar(&file, "f", "", "a string var")
+	flag.StringVar(&file, "f", "", "a string var")
 	flag.Parse()
 
 	reader := DBReader.New(file)

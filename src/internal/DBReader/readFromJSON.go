@@ -3,7 +3,7 @@ package DBReader
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 )
 
@@ -29,7 +29,7 @@ func ReadFile(Path string) []byte {
 		os.Exit(0)
 	}
 	defer file.Close()
-	data, err := ioutil.ReadAll(file)
+	data, err := io.ReadAll(io.Reader(file))
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(0)

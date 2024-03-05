@@ -1,25 +1,25 @@
 package DBReader
 
 import (
-    "encoding/xml"
-    "fmt"
-    // "io/ioutil"
-    "os"
+	"encoding/xml"
+	"fmt"
+	// "io/ioutil"
+	"os"
 )
 
 type readFromXML struct {
-    BookName string
+	BookName string
 }
 
 func (baker1 *readFromXML) Read() RecipeBook {
-    var origin RecipeBook
-    err := xml.Unmarshal(ReadFile(baker1.BookName), &origin)
-    if err != nil {
-        fmt.Println(err)
-        os.Exit(0)
-    }
-    // fmt.Println(origin)
-    return origin
+	var origin RecipeBook
+	err := xml.Unmarshal(ReadFile(baker1.BookName), &origin)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(0)
+	}
+	// fmt.Println(origin)
+	return origin
 }
 
 // func ReadFile(Path string) []byte {
