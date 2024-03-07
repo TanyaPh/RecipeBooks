@@ -12,7 +12,6 @@ func main() {
 	flag.StringVar(&newFile, "new", "", "path to file")
 	flag.Parse()
 
-
 	reader := DBReader.New(oldFile)
 	oldRecipeBook := reader.Read()
 
