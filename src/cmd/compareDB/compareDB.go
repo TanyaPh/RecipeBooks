@@ -1,17 +1,17 @@
 package main
 
 import (
+	"day01/internal/DBComparer"
 	"day01/internal/DBReader"
-	"day01/internal/DBComparator"
 	"flag"
 )
 
 func main() {
-	// check Args
 	var oldFile, newFile string
-	flag.StringVar(&oldFile, "old", "", "a string var")
-	flag.StringVar(&newFile, "new", "", "a string var")
+	flag.StringVar(&oldFile, "old", "", "path to file")
+	flag.StringVar(&newFile, "new", "", "path to file")
 	flag.Parse()
+
 
 	reader := DBReader.New(oldFile)
 	oldRecipeBook := reader.Read()
@@ -19,5 +19,5 @@ func main() {
 	reader = DBReader.New(newFile)
 	newRecipeBook := reader.Read()
 
-	DBComparator.CheckCakes(&oldRecipeBook, &newRecipeBook)
+	DBComparer.CheckCakes(&oldRecipeBook, &newRecipeBook)
 }
